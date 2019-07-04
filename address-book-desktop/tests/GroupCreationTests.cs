@@ -19,6 +19,7 @@ namespace address_book_desktop
             {
                 Name = "Group"
             };
+
             app.Groups.Add(newGroup);
 
             List<GroupData> newList = app.Groups.GetList();

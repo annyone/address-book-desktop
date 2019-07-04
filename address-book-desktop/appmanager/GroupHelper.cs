@@ -27,22 +27,22 @@ namespace address_book_desktop
         public void Add(GroupData newGroup)
         {
             OpenGroupsDialog();
-            //aux.WinActive(GROUPWINTITLE);
-            //aux.WinWaitActive(GROUPWINTITLE);
+            aux.WinActive(GROUPWINTITLE);
+            aux.WinWaitActive(GROUPWINTITLE);
             aux.ControlClick(GROUPWINTITLE, "", "WindowsForms10.BUTTON.app.0.2c908d53");
             aux.Send(newGroup.Name);
             aux.Send("{ENTER}");
             CloseGroupsDialog();
         }
 
-        private void CloseGroupsDialog()
+        public void CloseGroupsDialog()
         {
             aux.ControlClick(GROUPWINTITLE, "", "WindowsForms10.BUTTON.app.0.2c908d54");
         }
 
-        private void OpenGroupsDialog()
+        public void OpenGroupsDialog()
         {
-            aux.ControlClick("", "", "WindowsForms10.BUTTON.app.0.2c908d5128");
+            aux.ControlClick(WINTITLE, "", "WindowsForms10.BUTTON.app.0.2c908d512");
             aux.WinWait(GROUPWINTITLE);
         }
     }
