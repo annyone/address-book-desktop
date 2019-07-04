@@ -1,30 +1,31 @@
-﻿using NUnit.Framework;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NUnit.Framework;
 
 namespace address_book_desktop
 {
     [TestFixture]
-    public class GroupCreationTests : TestBase
+    public class GroupDeleteTests : TestBase
     {
         [Test]
-        public void TestGroupCreation()
+        public void TestGroupDelete()
         {
             List<GroupData> oldList = app.Groups.GetList();
 
-            GroupData newGroup = new GroupData("Group");
+            GroupData forDelete = oldList[0];
 
-            app.Groups.Add(newGroup);
+            app.Groups.Delete(forDelete);
 
             List<GroupData> newList = app.Groups.GetList();
-            oldList.Add(newGroup);
+            oldList.RemoveAt(1);
             oldList.Sort();
             newList.Sort();
 
             Assert.AreEqual(newList, oldList);
         }
+
     }
 }

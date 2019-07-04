@@ -8,6 +8,13 @@ namespace address_book_desktop
 {
     public class GroupData : IComparable<GroupData>, IEquatable<GroupData>
     {
+        //private string name;
+
+        public GroupData(string name)
+        {
+            this.Name = name;
+        }
+
         public string Name { get; set; }
 
         public int CompareTo(GroupData other)
