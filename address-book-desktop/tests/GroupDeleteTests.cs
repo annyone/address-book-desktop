@@ -13,6 +13,7 @@ namespace address_book_desktop
         [Test]
         public void TestGroupDelete()
         {
+            app.Groups.IsExist();
             List<GroupData> oldList = app.Groups.GetList();
 
             GroupData forDelete = oldList[0];

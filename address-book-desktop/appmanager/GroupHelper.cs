@@ -43,7 +43,6 @@ namespace address_book_desktop
             {
                 OpenGroupsDialog();
             }
-            IsExist();
             aux.ControlTreeView(GROUPWINTITLE, "", "WindowsForms10.SysTreeView32.app.0.2c908d51", "Select", "#0|#1", "");
             aux.ControlClick(GROUPWINTITLE, "", "WindowsForms10.BUTTON.app.0.2c908d51");
             aux.WinWait("Delete group");
